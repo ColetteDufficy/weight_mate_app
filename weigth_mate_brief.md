@@ -1,6 +1,7 @@
 # 'Weight Mate' Training App
 
 A novice gym user wants to track her weight training progress. She would like to be able to choose from a wide selection of exercises, have a resource to show her how to perform the chosen exercise, and also be able to record her performance so she can anaylize her progress. 
+Ultimately, she'd like to use it on her phone at the gym, and make it part of her training routine. 
 
 &nbsp;
 
@@ -8,7 +9,6 @@ A novice gym user wants to track her weight training progress. She would like to
 
 
 ## MVP
----
 A user should be able to:
 
 - Choose from a list of exercises to complete;
@@ -21,7 +21,6 @@ A user should be able to:
 &nbsp;
 
 ## Extensions
----
 - Create different Programmes and add exercises to these;
 - Filter exercises eg show Beginners Level only, or show Leg Work only;
 - View what the previous achievements were for a particular exercsie;
@@ -35,7 +34,6 @@ A user should be able to:
 &nbsp;
 
 ## API, Libraries, Resources
----
 A full stack app, using JavaScript with a React front framework/library. And using an Express framework on the back with a MongoDB database. 
 Also, using an API to pull general exercise data from. 
 
