@@ -25,6 +25,7 @@ A user should be able to:
 - Filter exercises eg show Beginners Level only, or show Leg Work only;
 - View what the previous achievements were for a particular exercsie;
 - View previous exercises by date/type;
+- View progress in a graph format, although need to clarify if this will be filtered by exercise type;
 - Log in using authorisation;
 - Ultimately, transition it to a mobile based app;
 - Learn to host on FireBase or similar.
