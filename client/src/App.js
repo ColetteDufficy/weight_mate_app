@@ -5,14 +5,18 @@ import ExerciseList from "./components/ExerciseList";
 import { getAllExercises } from "./services/ExerciseService";
 
 
+
 function App() {
 
     const [exerciseListings, setExerciseListings] = useState([]);
+
     
     useEffect(() => {
         getAllExercises()
         .then(exerciseListings => setExerciseListings(exerciseListings));
     }, [])
+
+
 
 
     return (
@@ -26,3 +30,6 @@ function App() {
 }
 
 export default App;
+
+
+
