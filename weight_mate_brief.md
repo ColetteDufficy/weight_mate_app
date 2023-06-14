@@ -42,3 +42,7 @@ An example of useful API found so far:
 https://api-ninjas.com/api/exercises
 
 Further research required to source suitable videos, if available. 
+
+
+### Wireframes 
+![Wireframe1](screengrabs/Screenshot%202023-06-14%20at%2015.04.07.png)
