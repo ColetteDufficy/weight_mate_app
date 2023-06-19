@@ -1,11 +1,10 @@
+const ExerciseDescription = ({exerciseInstruction}) => {
 
-const ExerciseDescription = ({exercise}) => {
+    // console.log(exercise)
 
-    console.log(exercise)
     return (
         <>
-            <p>text goes here</p>
-            <p>{exercise.instructions}</p>
+            <p>{exerciseInstruction}</p>
         </>
     )
 
