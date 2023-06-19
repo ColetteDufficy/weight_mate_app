@@ -2,7 +2,7 @@ import SingleExercise from "./SingleExercise";
 
 
 const ExerciseList = ({ exercises} ) => {
-    const exerciseNode = exercises.map((exercise) => {
+    const exerciseNodes = exercises.map((exercise) => {
         return <SingleExercise key={exercise._id} exercise={exercise}  />
     });
 
@@ -10,7 +10,7 @@ const ExerciseList = ({ exercises} ) => {
         <div className="exercise-list">
             <h2>Full List of Exercises</h2>
                 <div className="exercise-wrapper">
-                    { exerciseNode }
+                    { exerciseNodes }
                 </div>
                 
         </div>
