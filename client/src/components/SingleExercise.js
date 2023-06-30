@@ -16,7 +16,7 @@ const SingleExercise = ({exercise}) => {
     return (
         <div className="single-exercise">
         <h2> {exercise.name} </h2>
-        <button onClick={handleDisplayDescription}> Read Description here </button> 
+        <button onClick={handleDisplayDescription}> Description </button> 
         {displayDescription && <ExerciseDescription exerciseInstruction={exercise.instructions}/>}
         <button> Add to a programme </button>
 
