@@ -1,28 +1,32 @@
 import React, { useState } from "react"
 import ExerciseDescription from "./ExerciseDescription"
+import ExerciseDescriptionPopup from "./ExerciseDescriptionPopup";
 
 
 const SingleExercise = ({exercise}) => {
     // console.log(exercise);
 
-    // starting by hiding the exercise description, until the button/hyperlink is clicked. Must start as hidden
-    const [displayDescription, setDisplayDescription] = useState(false);
+        const [displayDescription, setDisplayDescription] = useState(false);
 
-    const handleDisplayDescription = () => {
-        setDisplayDescription(!displayDescription)
-    }
+        const handleDisplayDescription = () => {
+            setDisplayDescription(!displayDescription)
+        }
+
+
 
 
     return (
         <div className="single-exercise">
-        <h2> {exercise.name} </h2>
-        <button onClick={handleDisplayDescription}> Description </button> 
-        {displayDescription && <ExerciseDescription exerciseInstruction={exercise.instructions}/>}
-        <button> Add to a programme </button>
-
-
+            <h2> {exercise.name} </h2>
+                <button className="modalButton" onClick={handleDisplayDescription}> Description </button> 
+                {displayDescription && <ExerciseDescriptionPopup exerciseName={exercise.name} exerciseInstruction={exercise.instructions}/>}
+        <br></br>
+                <button> Add to a programme </button>
         </div>
     )
 }
 
 export default SingleExercise;
+
+
+//  {/* {displayDescription && <ExerciseDescription exerciseInstruction={exercise.instructions}/>} */}
