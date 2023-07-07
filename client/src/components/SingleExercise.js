@@ -20,7 +20,7 @@ const SingleExercise = ({exercise}) => {
         <div className="single-exercise">
             <h2> {exercise.name} </h2>
             
-                <button className="modalButton" onClick={handleDisplayDescription}> How do i do that? </button> 
+                <button className="modalButton" onClick={handleDisplayDescription}> How to </button> 
                 {displayDescription && <ExerciseDescriptionPopup exerciseName={exercise.name} exerciseInstruction={exercise.instructions} closeModal={handleDisplayDescription}/>}
 
 
