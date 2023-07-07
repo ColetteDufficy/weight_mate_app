@@ -1,13 +1,24 @@
 /* fonts imported */
 @import url('https://fonts.googleapis.com/css2?family=Comforter&display=swap');
 
+
+
 .App {
   text-align: center;
-  margin: 1.5em;
+  /* margin: 1.5em; */
+  /* border: 3px solid red; */
+  /* height: 100%; */
+  color: white;
+  background-image: url('./scott-webb-5IsdIqwwNP4-unsplash.jpg');
+  /* background-image: url('./80894768.jpg'); */
+  image-orientation: flip;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 h1 {
-  color: rgb(10, 131, 191);
+  color: rgba(9, 155, 116, 0.786);
   font-family: 'Comforter', cursive;
   font-size: 2.5em;
 }
@@ -23,5 +34,7 @@ h1 {
   padding-right: 5em;
   text-align: center;
 }
+
+
 
 

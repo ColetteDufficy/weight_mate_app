@@ -16,7 +16,6 @@ const SingleExercise = ({exercise}) => {
         }
 
 
-
     return (
         <div className="single-exercise">
             <h2> {exercise.name} </h2>
