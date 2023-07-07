@@ -1,5 +1,6 @@
 import React from "react"; 
 import "./ExerciseDescriptionPopup.css";
+import OutsideClickHandler from 'react-outside-click-handler';
 
 
 
@@ -12,6 +13,7 @@ const ExerciseDescriptionPopup = ({exerciseInstruction, exerciseName, closeModal
             <div className="modalContainer"> 
 
                 <div className="modalBody">
+                    <OutsideClickHandler onOutsideClick={closeModal}>
                     <h2>{exerciseName}</h2>
                     <p>{exerciseInstruction}</p>
                     
@@ -19,6 +21,7 @@ const ExerciseDescriptionPopup = ({exerciseInstruction, exerciseName, closeModal
                         <button>video</button>
                         <button onClick={closeModal}>close</button>
                     </div>
+                    </OutsideClickHandler>
                 </div>
             </div>
          </div>

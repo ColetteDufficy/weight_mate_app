@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import logo from './weightlifting-logo.jpg';
 import ExerciseList from "./components/ExerciseList";
 import { getAllExercises } from "./services/ExerciseService";
-import ExerciseDescriptionPopup from './components/ExerciseDescriptionPopup';
 
 
 
@@ -26,7 +25,6 @@ function App() {
             <p>nav bar to go here</p>
             <h1>My Weight Mate Training App</h1>
             <ExerciseList exercises={exerciseListings}/>
-            {/* <ExerciseDescriptionPopup/> */}
         </div>
     );
 }
