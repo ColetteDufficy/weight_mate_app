@@ -1,0 +1,72 @@
+/* .modalBackground {
+width: 100vw;
+height: 100vh;
+background-color: rgba(200, 200, 200);
+position: fixed;
+display: flex;
+justify-content: center;
+align-items: center;
+} */
+
+/* fonts imported */
+@import url('https://fonts.googleapis.com/css2?family=Comforter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Maven+Pro:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Maven+Pro:wght@400;800&display=swap');
+
+
+.modalContainer {
+position: absolute;
+width: 70%;
+height: 30%;
+border-radius: 12px;
+background-color: rgb(255, 255, 255);
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+display: flex;
+flex-direction: column;
+padding: 25px;
+}
+
+
+.modalBody {
+/* border: red 2px solid; */
+flex: 50%;
+font-family: 'Maven Pro', sans-serif;
+/* display: flex; */
+justify-content: center;
+align-items: center;
+text-align: center;
+} 
+
+.modalBody > h2 {
+/* font-family: 'Caprasimo', cursive; */
+/* border: blue 2px solid; */
+font-family: 'Comforter', cursive;
+color: rgb(10, 131, 191);
+font-size: 3em;
+display: inline-block;
+text-align: center;
+margin-top: 0px;
+} 
+
+.modalBody > p {
+/* font-family: 'Caprasimo', cursive;
+*/
+/* border: purple 2px solid; */
+font-family: 'Maven Pro', sans-serif;
+font-size: 1em;
+display: inline-block;
+text-align: center;
+margin-top: -30px;
+} 
+
+.modalFooter >button {
+width: 100px;
+height: 25px;
+margin: 10px;
+border: none;
+background-color: rgb(10, 131, 191);
+color: white;
+border-radius: 5px;
+font-size: 1em;
+cursor: grab;
+}

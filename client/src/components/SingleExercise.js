@@ -18,8 +18,8 @@ const SingleExercise = ({exercise}) => {
     return (
         <div className="single-exercise">
             <h2> {exercise.name} </h2>
-                <button className="modalButton" onClick={handleDisplayDescription}> Description </button> 
-                {displayDescription && <ExerciseDescriptionPopup exerciseName={exercise.name} exerciseInstruction={exercise.instructions}/>}
+                <button className="modalButton" onClick={handleDisplayDescription}> How do i do that? </button> 
+                {displayDescription && <ExerciseDescriptionPopup exerciseName={exercise.name} exerciseInstruction={exercise.instructions} closeModal={handleDisplayDescription}/>}
         <br></br>
                 <button> Add to a programme </button>
         </div>
