@@ -1,13 +1,13 @@
-const ExerciseDescription = ({exerciseInstruction}) => {
+// const ExerciseDescription = ({exerciseInstruction}) => {
 
-    // console.log(exercise)
+//     // console.log(exercise)
 
-    return (
-        <>
-            <p>{exerciseInstruction}</p>
-        </>
-    )
+//     return (
+//         <>
+//             <p>{exerciseInstruction}</p>
+//         </>
+//     )
 
-}
+// }
 
-export default ExerciseDescription;
+// export default ExerciseDescription;

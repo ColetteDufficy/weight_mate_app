@@ -1,6 +1,6 @@
 import React from "react"; 
 import "./ExerciseDescriptionPopup.css";
-import OutsideClickHandler from 'react-outside-click-handler';
+import OutsideClickHandler from 'react-outside-click-handler'; // dependancy - allows the modal to close once anywhere is clicked iutside of modal
 
 
 
@@ -18,7 +18,7 @@ const ExerciseDescriptionPopup = ({exerciseInstruction, exerciseName, closeModal
                     <p>{exerciseInstruction}</p>
                     
                     <div className="modalFooter">
-                        <button>video</button>
+                        <button className="modalFooterButton">video</button>
                         <button onClick={closeModal}>close</button>
                     </div>
                     </OutsideClickHandler>

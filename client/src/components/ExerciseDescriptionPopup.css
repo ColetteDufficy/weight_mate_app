@@ -39,21 +39,22 @@ align-items: center;
 text-align: center;
 } 
 
-.modalBody > h2 {
+.modalBody h2 {
 /* font-family: 'Caprasimo', cursive; */
 /* border: blue 2px solid; */
 font-family: 'Comforter', cursive;
-color: rgb(10, 131, 191);
-font-size: 3em;
+color: rgb(9, 155, 116, 0.786);
+font-size: 2em;
 display: inline-block;
 text-align: center;
 margin-top: 0px;
 } 
 
-.modalBody > p {
+.modalBody p {
 /* font-family: 'Caprasimo', cursive;
 */
 /* border: purple 2px solid; */
+color: black;
 font-family: 'Maven Pro', sans-serif;
 font-size: 1em;
 display: inline-block;
@@ -61,14 +62,15 @@ text-align: center;
 margin-top: -30px;
 } 
 
-.modalFooter >button {
+.modalFooter button {
 width: 100px;
 height: 25px;
 margin: 10px;
 border: none;
-background-color: rgb(10, 131, 191);
+background-color: rgba(9, 155, 116, 0.786);
 color: white;
 border-radius: 5px;
 font-size: 1em;
 cursor: grab;
 }
+

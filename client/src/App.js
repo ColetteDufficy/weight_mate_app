@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useEffect, useState } from "react";
-import logo from './weightlifting-logo.jpg';
+// import logo from './images/weightlifting-logo.jpg';
 import ExerciseList from "./components/ExerciseList";
 import { getAllExercises } from "./services/ExerciseService";
 

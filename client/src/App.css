@@ -9,8 +9,7 @@
   /* border: 3px solid red; */
   /* height: 100%; */
   color: white;
-  background-image: url('./scott-webb-5IsdIqwwNP4-unsplash.jpg');
-  /* background-image: url('./80894768.jpg'); */
+  background-image: url('./images/scott-webb-5IsdIqwwNP4-unsplash.jpg');
   image-orientation: flip;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -34,6 +33,9 @@ h1 {
   padding-right: 5em;
   text-align: center;
 }
+
+
+
 
 
 

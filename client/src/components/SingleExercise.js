@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import ExerciseDescriptionPopup from "./ExerciseDescriptionPopup";
-import OutsideClickHandler from 'react-outside-click-handler';
 
 
 
