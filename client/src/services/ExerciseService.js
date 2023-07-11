@@ -3,9 +3,11 @@ import { API_KEY } from '../env.js';
 
 const baseURL = 'https://api.api-ninjas.com/v1/exercises';
 
-export const getAllExercises = () => {
+const getAllExercises = () => {
     return fetch(baseURL, {
         headers: { 'X-Api-Key': API_KEY },
     })
         .then(res => res.json())
 }
+
+export default getAllExercises;
