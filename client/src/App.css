@@ -14,10 +14,12 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+
 }
 
 h1 {
   color: rgba(9, 155, 116, 0.786);
+  /* border: 3px red solid; */
   font-family: 'Comforter', cursive;
   font-size: 2.5em;
 }
@@ -32,7 +34,9 @@ h1 {
   padding-left: 5em;
   padding-right: 5em;
   text-align: center;
+  /* border: red 3px solid; */
 }
+
 
 
 

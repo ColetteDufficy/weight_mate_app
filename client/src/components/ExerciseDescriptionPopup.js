@@ -1,10 +1,10 @@
 import React from "react"; 
-import "./ExerciseDescriptionPopup.css";
-import OutsideClickHandler from 'react-outside-click-handler'; // dependancy - allows the modal to close once anywhere is clicked iutside of modal
+import './ExerciseDescriptionPopup.css';
+import OutsideClickHandler from 'react-outside-click-handler'; // dependancy - allows the modal to close once anywhere is clicked outside of modal
 
 
 
-const ExerciseDescriptionPopup = ({exerciseInstruction, exerciseName, closeModal}) => {
+const ExerciseDescriptionPopup = ({ exerciseName, exerciseInstruction, closeModal }) => {
 
 
 
