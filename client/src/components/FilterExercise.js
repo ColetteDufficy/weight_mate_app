@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import { API_KEY } from '../env.js';
-import SingleExercise from './SingleExercise';
-
 
 
 
 // setting up useState hook for the 3 options
-const DropdownFilter = ({ exercises }) => {
+const DropdownFilter = ({ setExerciseListings }) => {
     const [selectedType, setSelectedType] = useState('');
     const [selectedMuscle, setSelectedMuscle] = useState('');
     const [selectedDifficulty, setSelectedDifficulty] = useState('');
-    // const [filteredExerciseListings, setFilteredExerciseListings] = useState([]); 
-
 
 
     // hard coded list of options for the drop down menus
@@ -39,22 +35,22 @@ const DropdownFilter = ({ exercises }) => {
     };
 
 
-    const handleSearch = () => {
-    fetch(`https://api.api-ninjas.com/v1/exercises?type=${selectedType}&muscle=${selectedMuscle}&difficulty=${selectedDifficulty}`, {
-    headers: { 'X-Api-Key': API_KEY }
-    })
-    .then(response => response.json())
-    // .then(data => data.name)
-    .then(data => console.log(data))
-    // .then(data => setFilteredExerciseListings(data))
-    .catch(err => console.error(err));
-
-};
+    const handleSearch = (evt) => {
+        evt.preventDefault()
+        fetch(`https://api.api-ninjas.com/v1/exercises?type=${selectedType}&muscle=${selectedMuscle}&difficulty=${selectedDifficulty}`, 
+        { headers: { 'X-Api-Key': API_KEY }})
+        .then(response => response.json())
+        .then(data => {
+            console.log("data from filter search", data)
+            setExerciseListings(data);  
+        })
+        .catch(err => console.error(err));
+    };
 
 
 
     return (
-    <>
+    <form>
         <select value={selectedType} onChange={handleTypeSelected}>
             <option value="">Select a type</option>
             {dropdownType.map((type) => (
@@ -82,9 +78,9 @@ const DropdownFilter = ({ exercises }) => {
         ))}
         </select>
 
-        <button onClick={handleSearch}>Search</button>
+        <button onClick={handleSearch} > Search</button>
 
-    </>
+    </form>
     );
 };
 

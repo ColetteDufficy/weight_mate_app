@@ -8,6 +8,7 @@ const getAllExercises = () => {
         headers: { 'X-Api-Key': API_KEY },
     })
         .then(res => res.json())
+
 }
 
 export default getAllExercises;

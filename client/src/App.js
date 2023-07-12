@@ -1,5 +1,5 @@
 import './App.css';
-import ExerciseContainer from './components/ExerciseContainer';
+import ExerciseContainer from './containers/ExerciseContainer';
 
 
 
