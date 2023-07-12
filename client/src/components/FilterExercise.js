@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { API_KEY } from '../env.js';
+
 
 // setting up useState hook for the 3 options
 const DropdownFilter = ({ setExerciseListings, exercises }) => {
@@ -9,7 +11,7 @@ const DropdownFilter = ({ setExerciseListings, exercises }) => {
 
     // hard coded list of options for the drop down menus
     const dropdownType = ["Cardio", "Olympic Weightlifting", "Plyometrics", "Powerlifting", "Strength", "Stretching", "Strongman"];
-    const dropdownMuscle = ["Abdominals", "Abductors", "Adductors", "Biceps", "Calves", "Chest", "Forearms", "Glutes", "Hamstrings", "Lats", "Lower Back", "Middle Back", "Neck", "Quadriceps", "Traps", "Ttriceps"];
+    const dropdownMuscle = ["Abdominals", "Abductors", "Adductors", "Biceps", "Calves", "Chest", "Forearms", "Glutes", "Hamstrings", "Lats", "Lower Back", "Middle Back", "Neck", "Quadriceps", "Shoulders", "Traps", "Ttriceps"];
     const dropdownDifficulty = ["Beginner", "Intermediate", "Expert"];
 
 
@@ -33,11 +35,15 @@ const DropdownFilter = ({ setExerciseListings, exercises }) => {
 
 
     const handleSearch = () => {
-    fetch(`https://api.api-ninjas.com/v1/exercises?type=${selectedType}&muscle=${selectedMuscle}&difficulty=${selectedDifficulty}`)
-    .then(res => res.json())
-    .then(data => data)
-    console.log(data);
-    };
+    fetch(`https://api.api-ninjas.com/v1/exercises?type=${selectedType}&muscle=${selectedMuscle}&difficulty=${selectedDifficulty}`, {
+    headers: { 'X-Api-Key': API_KEY }
+    })
+
+
+
+    .then(response => response.json())
+    .then(data => console.log(data));
+};
 
 
     return (
