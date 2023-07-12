@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import { API_KEY } from '../env.js';
+import SingleExercise from './SingleExercise';
+
+
 
 
 // setting up useState hook for the 3 options
-const DropdownFilter = ({ setExerciseListings, exercises }) => {
+const DropdownFilter = ({ exercises }) => {
     const [selectedType, setSelectedType] = useState('');
     const [selectedMuscle, setSelectedMuscle] = useState('');
     const [selectedDifficulty, setSelectedDifficulty] = useState('');
+    // const [filteredExerciseListings, setFilteredExerciseListings] = useState([]); 
+
 
 
     // hard coded list of options for the drop down menus
@@ -38,12 +43,14 @@ const DropdownFilter = ({ setExerciseListings, exercises }) => {
     fetch(`https://api.api-ninjas.com/v1/exercises?type=${selectedType}&muscle=${selectedMuscle}&difficulty=${selectedDifficulty}`, {
     headers: { 'X-Api-Key': API_KEY }
     })
-
-
-
     .then(response => response.json())
-    .then(data => console.log(data));
+    // .then(data => data.name)
+    .then(data => console.log(data))
+    // .then(data => setFilteredExerciseListings(data))
+    .catch(err => console.error(err));
+
 };
+
 
 
     return (
@@ -76,6 +83,7 @@ const DropdownFilter = ({ setExerciseListings, exercises }) => {
         </select>
 
         <button onClick={handleSearch}>Search</button>
+
     </>
     );
 };

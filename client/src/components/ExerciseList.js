@@ -3,8 +3,8 @@ import DropdownFilter from './FilterExercise';
 import SingleExercise from './SingleExercise';
 
 
-const ExerciseList = ({ exercises, setExerciseListings} ) => {
-    const exerciseNodes = exercises.map((exercise) => {
+const ExerciseList = ({ exercises } ) => {
+    const autoLoadedExerciseNodes = exercises.map((exercise) => {
         return <SingleExercise key={exercise._id} exercise={exercise}  />
     });
 
@@ -18,8 +18,8 @@ const ExerciseList = ({ exercises, setExerciseListings} ) => {
             <h2>OR</h2>
 
             <h2>Choose what you want to do:</h2>
-                <div className="exercise-wrapper">
-                    { exerciseNodes } 
+                <div className="exercise-wrapper" >
+                    { autoLoadedExerciseNodes } 
                 </div>
                 
         </div>
