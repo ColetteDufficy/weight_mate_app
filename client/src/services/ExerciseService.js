@@ -12,3 +12,4 @@ const getAllExercises = () => {
 }
 
 export default getAllExercises;
+

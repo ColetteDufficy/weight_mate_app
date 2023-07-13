@@ -25,12 +25,12 @@ const ExerciseList = ({ exerciseListings, setExerciseListings } ) => {
     return (
         
         <div className="exercise-list">
-            <h2>Choose your own</h2>
+            <h2>What do you want to do today?</h2>
             <DropdownFilter setExerciseListings = {setExerciseListings}/>
 
             <h2>OR</h2>
 
-            <h2>Today's suggestions for you</h2>
+            <h2>Here's some ideas</h2>
                 <div className="exercise-wrapper" >
                     { initialLoadExerciseNodes } 
                 </div>
