@@ -5,19 +5,19 @@ import SingleExercise from './SingleExercise';
 
 const ExerciseList = ({ exerciseListings, setExerciseListings } ) => {
 
-    const autoLoadedExerciseNodes = exerciseListings ? (
-        exerciseListings.map((exercise) => (
-            <SingleExercise key={exercise._id} exercise={exercise} />
-        ))
-    ) : (
-    <p>No exercises found.</p>
-    );
+    // const autoLoadedExerciseNodes = exerciseListings ? (
+    //     exerciseListings.map((exercise) => (
+    //         <SingleExercise key={exercise._id} exercise={exercise} />
+    //     ))
+    // ) : (
+    // <p>No exercises found.</p>
+    // );
 
 
     //orginal code - delete when fixed!
-    // const autoLoadedExerciseNodes = exerciseListings.map((exercise) => {
-    //     return <SingleExercise key={exercise._id} exercise={exercise}  />
-    // });
+    const initialLoadExerciseNodes = exerciseListings.map((exercise) => {
+        return <SingleExercise key={exercise._id} exercise={exercise}  />
+    });
     
 
 
@@ -32,7 +32,7 @@ const ExerciseList = ({ exerciseListings, setExerciseListings } ) => {
 
             <h2>Today's suggestions for you</h2>
                 <div className="exercise-wrapper" >
-                    { autoLoadedExerciseNodes } 
+                    { initialLoadExerciseNodes } 
                 </div>
         </div>
         

@@ -14,6 +14,7 @@ const ExerciseContainer = () => {
     }, [])
 
 
+    // passing down state to the child ExerciseList:
     return (
         <div className="exerciseContainer">        
             <ExerciseList exerciseListings={exerciseListings} setExerciseListings={setExerciseListings}/>
