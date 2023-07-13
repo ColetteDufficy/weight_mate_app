@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ExerciseList from "../components/ExerciseList";
 import getAllExercises  from "../services/ExerciseService";
+import ExerciseService from "../services/ExerciseService";
 
 
 const ExerciseContainer = () => {
@@ -9,7 +10,7 @@ const ExerciseContainer = () => {
 
     // the initial fetch and data load showing 10 exercises to choose from
     useEffect(() => {
-        getAllExercises()
+        ExerciseService.getAllExercises()
         .then(intialExerciseListings => setExerciseListings(intialExerciseListings));
     }, [])
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { API_KEY } from '../env.js';
-import getAllExercises  from "../services/ExerciseService";
+import ExerciseService from "../services/ExerciseService";
 
 
 const DropdownFilter = ({ setExerciseListings }) => {
@@ -44,8 +44,11 @@ const DropdownFilter = ({ setExerciseListings }) => {
         .then(data => {
             console.log("data from filter search", data); // previous code; .then(data => console.log(data) was returning undefined
                 if (data.length === 0) {
-                    getAllExercises()
+
+                    ExerciseService.randomListOfExercises()
                     .then(intialExerciseListings => setExerciseListings(intialExerciseListings));
+
+
                 } else {
                     setExerciseListings(data);  // updates the value of exerciseListings by using the useState setExerciseListings method and data as the argument
                 }
