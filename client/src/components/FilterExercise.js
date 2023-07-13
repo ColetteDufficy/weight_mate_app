@@ -78,7 +78,8 @@ const DropdownFilter = ({ setExerciseListings }) => {
         ))}
         </select>
 
-        <button onClick={handleSearch} > Search</button>
+        <button onClick={handleSearch}> Search</button>
+        <button> Clear </button>
 
     </form>
     );
