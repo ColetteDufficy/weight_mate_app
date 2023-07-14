@@ -40,19 +40,17 @@ const FilterExercise = ({ setExerciseListings }) => {
       // event handler of onClick event for the Search button
     const handleSearch = (evt) => {
         evt.preventDefault()
-        fetch(`https://api.api-ninjas.com/v1/exercises?type=${selectedType}&muscle=${selectedMuscle}&difficulty=${selectedDifficulty}`, 
-        { headers: { 'X-Api-Key': API_KEY }})
-        .then(response => response.json())
+        ExerciseService.filteredFetch(selectedType, selectedMuscle, selectedDifficulty) // this is the fetch() being called on the filtered results. Taking in 3 arguments
+
         .then(data => {
-            console.log("data from filter search", data); // previous code; .then(data => console.log(data) was returning undefined
+            // console.log("data from filter search", data); 
                 if (data.length === 0) {
                     setFetchedDataMsg(true)
-                    ExerciseService.randomListOfExercises()
-                    .then(intialExerciseListings => setExerciseListings(intialExerciseListings));
+                    ExerciseService.randomInitialFetchExercises() 
+                    // .then(intialExerciseListings => setExerciseListings(intialExerciseListings));
 
                 } else {
                     setFetchedDataMsg(false)
-
                     setExerciseListings(data);  // updates the value of exerciseListings by using the useState setExerciseListings method and data as the argument
                 }
         })
@@ -64,7 +62,7 @@ const FilterExercise = ({ setExerciseListings }) => {
     return (
     <form>
         
-        <select value={selectedType} onChange={handleTypeSelected}>
+        <select value={selectedType} onChange={handleTypeSelected} selectedType={selectedType} >
             <option value="">Select a type</option>
             {dropdownType.map((type) => (
             <option key={type} value={type}>
@@ -91,9 +89,9 @@ const FilterExercise = ({ setExerciseListings }) => {
         ))}
         </select>
 
-        <button onClick={handleSearch}> Search</button>
+        <button onClick={handleSearch} > Search</button>
         <button> Clear </button>
-        {fetchedDataMsg && <h3>Sorry. There are no results for your search.</h3>}
+        {fetchedDataMsg && <h3>Sorry. There are no results for your search. But have a look below</h3>}
 
     </form>
     );
