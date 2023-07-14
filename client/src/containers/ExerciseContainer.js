@@ -9,7 +9,7 @@ const ExerciseContainer = () => {
 
     // the initial fetch and data load showing 10 exercises to choose from
     useEffect(() => {
-        ExerciseService.getAllExercises()
+        ExerciseService.randomInitialFetchExercises() 
         .then(intialExerciseListings => setExerciseListings(intialExerciseListings));
     }, [])
 

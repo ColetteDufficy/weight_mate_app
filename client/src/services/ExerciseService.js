@@ -13,16 +13,21 @@ const shuffleList = (list) => {
     return list;
 };
 
+// a function that picks a random number betweem 0 and 3402
+// const randomOffsetNumber = () => {
+//     const randomNumber = Math.floor(Math.random() * 3402);
+//     return randomNumber;
+// };
+
 
 const ExerciseService = { 
     
-
     // returns the intial 10 exercises from the API
     getAllExercises() {
         return fetch(baseURL, {
             headers: { 'X-Api-Key': API_KEY },
         })
-            .then(res => res.json())
+            .then(res => res.json());
     },
 
 
@@ -34,7 +39,32 @@ const ExerciseService = {
         })
         .then(res => res.json())
         .then((data) => shuffleList(data))
+    },
+
+
+    // return random list of exercises from the initial fetch
+    randomInitialFetchExercises() {
+
+        const randomOffsetNumber = () => {
+            const randomNumber = Math.floor(Math.random() * 3402);
+            return randomNumber;
+        };
+
+        const offset = randomOffsetNumber();
+
+
+        return fetch(`https://api.api-ninjas.com/v1/exercises?offset=${offset}`, {
+            headers: {'X-Api-Key': API_KEY}
+        })
+        .then(res => res.json());
     }
+
+
+    // fetch(`https://api.api-ninjas.com/v1/exercises?type=${selectedType}&muscle=${selectedMuscle}&difficulty=${selectedDifficulty}`, 
+    // { headers: { 'X-Api-Key': API_KEY }})
+    // .then(response => response.json())
+    // .then(data => {
+    //     console.log("data from filter search", data);
 
 
 };

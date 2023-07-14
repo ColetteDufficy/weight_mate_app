@@ -15,7 +15,7 @@ const ExerciseList = ({ exerciseListings, setExerciseListings } ) => {
     // );
 
 
-    //orginal code - delete when fixed!
+
     const initialLoadExerciseNodes = exerciseListings.map((exercise) => {
         return <SingleExercise key={exercise._id} exercise={exercise}  />
     });
