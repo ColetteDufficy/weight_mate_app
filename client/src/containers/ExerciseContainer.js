@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import ExerciseList from "../components/ExerciseList";
-import getAllExercises  from "../services/ExerciseService";
 import ExerciseService from "../services/ExerciseService";
 
 

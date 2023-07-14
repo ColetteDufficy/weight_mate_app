@@ -11,10 +11,11 @@ const shuffleList = (list) => {
         [list[index], list[randomIndexPosition]] = [list[randomIndexPosition], list[index]];
     }
     return list;
-    };
+};
 
 
-const ExerciseService = { shuffleList,
+const ExerciseService = { 
+    
 
     // returns the intial 10 exercises from the API
     getAllExercises() {
@@ -32,7 +33,7 @@ const ExerciseService = { shuffleList,
             headers: {'X-Api-Key': API_KEY},
         })
         .then(res => res.json())
-        .then((data) => this.shuffleList(data))
+        .then((data) => shuffleList(data))
     }
 
 

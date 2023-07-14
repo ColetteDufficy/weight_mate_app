@@ -3,12 +3,13 @@ import { API_KEY } from '../env.js';
 import ExerciseService from "../services/ExerciseService";
 
 
-const DropdownFilter = ({ setExerciseListings }) => {
+const FilterExercise = ({ setExerciseListings }) => {
 
     // setting up useState hook for the 3 options
     const [selectedType, setSelectedType] = useState('');
     const [selectedMuscle, setSelectedMuscle] = useState('');
     const [selectedDifficulty, setSelectedDifficulty] = useState('');
+    const [fetchedDataMsg, setFetchedDataMsg] = useState(false);
 
 
     // hard coded list of options for the drop down menus
@@ -35,6 +36,7 @@ const DropdownFilter = ({ setExerciseListings }) => {
         setSelectedDifficulty(selectedValueDifficulty);
     };
 
+
       // event handler of onClick event for the Search button
     const handleSearch = (evt) => {
         evt.preventDefault()
@@ -44,12 +46,13 @@ const DropdownFilter = ({ setExerciseListings }) => {
         .then(data => {
             console.log("data from filter search", data); // previous code; .then(data => console.log(data) was returning undefined
                 if (data.length === 0) {
-
+                    setFetchedDataMsg(true)
                     ExerciseService.randomListOfExercises()
                     .then(intialExerciseListings => setExerciseListings(intialExerciseListings));
 
-
                 } else {
+                    setFetchedDataMsg(false)
+
                     setExerciseListings(data);  // updates the value of exerciseListings by using the useState setExerciseListings method and data as the argument
                 }
         })
@@ -60,6 +63,7 @@ const DropdownFilter = ({ setExerciseListings }) => {
 
     return (
     <form>
+        
         <select value={selectedType} onChange={handleTypeSelected}>
             <option value="">Select a type</option>
             {dropdownType.map((type) => (
@@ -89,9 +93,10 @@ const DropdownFilter = ({ setExerciseListings }) => {
 
         <button onClick={handleSearch}> Search</button>
         <button> Clear </button>
+        {fetchedDataMsg && <h3>Sorry. There are no results for your search.</h3>}
 
     </form>
     );
 };
 
-export default DropdownFilter;
+export default FilterExercise;

@@ -1,5 +1,5 @@
 // import { useState } from 'react';
-import DropdownFilter from './FilterExercise';
+import FilterExercise from './FilterExercise';
 import SingleExercise from './SingleExercise';
 import ExerciseService from '../services/ExerciseService';
 
@@ -34,7 +34,7 @@ const ExerciseList = ({ exerciseListings, setExerciseListings } ) => {
         <div className="exercise-list">
             <div className='filtered_exercise_list'>
                 <h2>What do you want to do today?</h2>
-                <DropdownFilter setExerciseListings = {setExerciseListings}/>
+                <FilterExercise setExerciseListings = {setExerciseListings}/>
             </div>
 
             <br></br>
