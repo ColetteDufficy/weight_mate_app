@@ -1,5 +1,5 @@
 import { API_KEY } from '../env.js';
-const baseURL = 'https://api.api-ninjas.com/v1/exercises';
+const baseURL = 'https://api.api-ninjas.com/v1/exercises' 
 
 
 const ExerciseService = { 
