@@ -3,10 +3,12 @@ import { API_KEY } from '../env.js';
 
 const baseURL = 'https://api.api-ninjas.com/v1/exercises';
 
+
+// a function created to 'shuffle' the data thats retuerned from the fetch
 const shuffleList = (list) => {
     for (let index = list.length - 1; index > 0; index--) {
-        const j = Math.floor(Math.random() * (index + 1));
-        [list[index], list[j]] = [list[j], list[index]];
+        const randomIndexPosition = Math.floor(Math.random() * (index + 1));
+        [list[index], list[randomIndexPosition]] = [list[randomIndexPosition], list[index]];
     }
     return list;
     };
@@ -22,16 +24,15 @@ const ExerciseService = { shuffleList,
             .then(res => res.json())
     },
 
+
+
     // return random list of exercises from the API
-
-
-
     randomListOfExercises() {
         return fetch(baseURL, {
             headers: {'X-Api-Key': API_KEY},
         })
         .then(res => res.json())
-        .then((data)=> this.shuffleList(data))
+        .then((data) => this.shuffleList(data))
     }
 
 

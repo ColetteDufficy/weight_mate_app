@@ -2,21 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Comforter&display=swap');
 
 
-
 .App {
-  text-align: center;
-  /* margin: 1.5em; */
   /* border: 3px solid red; */
-  /* height: 100%; */
+  text-align: center;
   color: white;
   box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
   background-image: url('./images/scott-webb-5IsdIqwwNP4-unsplash.jpg');
   image-orientation: flip;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-size: cover;
+  background-attachment: fixed;
+  /* height: 100%; */
+  width: 100vw;
+  /* height: 100vh; */
   padding: 50px;
-
+  /* background-position: center; */
 }
 
 h1 {
@@ -33,10 +33,23 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding-left: 5em;
   padding-right: 5em;
+  padding-top: 2em;;
+  /* padding: 5em; */
   text-align: center;
   /* border: red 3px solid; */
+}
+
+.single-exercise {
+  /* display: flex; */
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  border: rgba(114, 114, 114, 0.2) 2px solid;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  border-radius: 12px;
+  margin: 0.5em;
 }
 
 

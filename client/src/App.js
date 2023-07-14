@@ -8,7 +8,7 @@ function App() {
 
     return (
         <div className="App">
-            <h1>My Weight Mate Training App</h1>
+            <h1>Welcome to Weight Mate</h1>
             <ExerciseContainer />
         </div>
     );

@@ -18,7 +18,7 @@ const ExerciseDescriptionPopup = ({ exerciseName, exerciseInstruction, closeModa
                     <p>{exerciseInstruction}</p>
                     
                     <div className="modalFooter">
-                        <a href="https://www.youtube.com/watch?v=sxF9BcDt-yY" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.youtube.com/watch?v=sxF9BcDt-yY" target="_blank">
                             <button className="modalFooterButton">video</button></a>
 
                         <button onClick={closeModal}>close</button>
