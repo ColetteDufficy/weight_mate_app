@@ -6,15 +6,6 @@ import ExerciseService from '../services/ExerciseService';
 
 const ExerciseList = ({ exerciseListings, setExerciseListings } ) => {
 
-    // const autoLoadedExerciseNodes = exerciseListings ? (
-    //     exerciseListings.map((exercise) => (
-    //         <SingleExercise key={exercise._id} exercise={exercise} />
-    //     ))
-    // ) : (
-    // <p>No exercises found.</p>
-    // );
-
-
 
     const initialLoadExerciseNodes = exerciseListings.map((exercise) => {
         return <SingleExercise key={exercise._id} exercise={exercise}  />
@@ -41,13 +32,10 @@ const ExerciseList = ({ exerciseListings, setExerciseListings } ) => {
             <br></br>
             <br></br>
 
-            {/* <h2>OR</h2> */}
             <div className='initial_load_exercise_list'>
             <h2>Here's some ideas for you!</h2>
             
             <button onClick={handleShuffle}> Shuffle</button>
-            {/* <br></br>
-            <br></br> */}
 
                 <div className="exercise-wrapper" >
                     { initialLoadExerciseNodes } 

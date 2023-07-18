@@ -8,6 +8,7 @@ const SingleExercise = ({exercise}) => {
 
         // usestate to control the display of the exercise description popup
         const [displayDescription, setDisplayDescription] = useState(false);
+        const [displayProgramme, setDisplayProgramme] = useState(false);
 
         // popup always starts hidden. 
         const handleDisplayDescription = () => {
