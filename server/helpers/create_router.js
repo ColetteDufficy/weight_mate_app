@@ -1,6 +1,5 @@
-const { resolveAny } = require('dns');
 const express = require('express');
-const ObjectID = require('mongodb').ObjectID;
+const { ObjectID } = require('mongodb'); // import statement needed to be updated for version 3+ of mongo
 
 const createRouter = function (collection) {
 
@@ -21,7 +20,7 @@ const createRouter = function (collection) {
 
 
 
-    // show one programme by id
+    // show one programme by its id
     router.get('/:id', (req, res) => {
         const id  = req.params.id;
         collection

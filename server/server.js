@@ -1,9 +1,8 @@
 const express = require('express');
-const app = express();
-const cors = require('cors');
+const app = express(); //instance of the Express application, and storedd in the variable called app. Represents our web application and allows us to define routes, and handle HTTP requests.
+const cors = require('cors'); //It allows your server to respond to requests from different origins. This is necessary when your frontend is hosted on a different domain than your backend serve
 const createRouter = require('./helpers/create_router.js');
 const MongoClient = require('mongodb').MongoClient;
-
 
 
 app.use(cors());
@@ -18,7 +17,7 @@ MongoClient.connect('mongodb://127.0.0.1:27017', { useUnifiedTopology: true })
     const programmesRouter = createRouter(programmesCollection);
     
     //using the router for the 'api-ninjas' endpoint:
-    app.use('/api/programmes', programmesRouter);
+    app.use('/programmes', programmesRouter);
   })
   .catch(console.err);
 
