@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import ExerciseDescriptionPopup from "./ExerciseDescriptionPopup";
+import AddNewProgrammePopup from "./AddNewProgrammePopup";
 
 
 
@@ -15,6 +16,10 @@ const SingleExercise = ({exercise}) => {
             setDisplayDescription(!displayDescription)
         }
 
+        const handleDisplayProgramme = () => {
+            setDisplayProgramme(!displayProgramme)
+        }
+
 
     return (
         <div className="single-exercise">
@@ -25,7 +30,9 @@ const SingleExercise = ({exercise}) => {
 
 
             <br></br>
-            <button> Add to a programme </button>
+
+            <button className="modalButton" onClick={handleDisplayProgramme}> Add to a programme </button>
+            {displayProgramme && <AddNewProgrammePopup closeProgrammeModal={handleDisplayProgramme}/> }
         </div>
     )
 }
