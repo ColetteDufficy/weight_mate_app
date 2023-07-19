@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import ExerciseDescriptionPopup from "./ExerciseDescriptionPopup";
 import AddNewProgrammePopup from "./AddNewProgrammePopup";
-import ProgrammeService from '../services/ProgrammeService'
+import ProgrammeService from '../services/ProgrammeService';
 
 
 
@@ -22,12 +22,6 @@ const SingleExercise = ({exercise}) => {
     const handleDisplayProgramme = () => {
         setDisplayProgramme(!displayProgramme)
     }
-
-    // const createNewProgramme = newProgramme => {
-    //     ProgrammeService.addNewProgramme(newProgramme)
-    //     .then(savedProgramme => setProgrammes([...programmes, savedProgramme]))
-    // };
-
 
     return (
         <div className="single-exercise">
