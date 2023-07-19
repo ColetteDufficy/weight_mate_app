@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { API_KEY } from '../env.js';
 import ExerciseService from "../services/ExerciseService";
 
 
@@ -38,8 +37,8 @@ const FilterExercise = ({ setExerciseListings }) => {
 
 
       // event handler of onClick event for the Search button
-    const handleSearch = (evt) => {
-        evt.preventDefault()
+    const handleSearch = (event) => {
+        event.preventDefault()
         ExerciseService.filteredFetch(selectedType, selectedMuscle, selectedDifficulty) // this is the fetch() being called on the filtered results. Taking in 3 arguments
 
         .then(data => {

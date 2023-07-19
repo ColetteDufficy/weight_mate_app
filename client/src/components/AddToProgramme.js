@@ -1,16 +1,11 @@
 import React, {useState, useEffect} from "react";
 import './ExerciseDescriptionPopup.css';
-import OutsideClickHandler from 'react-outside-click-handler'; 
 import ProgrammeService from '../services/ProgrammeService'
 
 
-const AddNewProgrammePopup = ({ closeProgrammeModal, exerciseName }) => {
-    const [programme_name, setProgramme_Name] = useState("");
-    const [notes, setNotes] = useState("");
+const AddToProgramme = ({ exerciseName }) => {
     const [selectedProgramme, setselectedProgramme] = useState('');
     const [allDropdownProgrammes, setAllDropdownProgrammes] = useState([]);
-    const [programmes, setProgrammes] = useState([])
-
 
 
     // need to set up the useeffect forst because its asynchnois and ive only been given a promise rather than the array that i wanted to map over
@@ -23,20 +18,6 @@ const AddNewProgrammePopup = ({ closeProgrammeModal, exerciseName }) => {
     }, []);
 
 
-    // event handler for name update - function 
-    const handleNameChange = (event) => {
-        const nameChange = event.target.value;
-        setProgramme_Name(nameChange);
-    };
-
-
-    // event handler for notes update - function 
-    const handleNotesChange = (event) => {
-        const notesChange = event.target.value;
-        setNotes(notesChange);
-    };
-
-    
     // handler event that handles the chnage of programme based on the users selection from the downdown menu
     const handleProgrammeSelected = (event) => {
         const programmeChange = event.target.value;
@@ -44,83 +25,62 @@ const AddNewProgrammePopup = ({ closeProgrammeModal, exerciseName }) => {
     };
 
 
-    // this event handler/function submits a new programe to the db
-    const handleSubmitNewProgramme = (event) => {
-        event.preventDefault();
-        
-        ProgrammeService.addNewProgramme(
-            {programme_name: programme_name, 
-            notes: notes
-        })
-
-        .then(savedProgramme => setProgrammes([...programmes, savedProgramme]));
-
-        setProgramme_Name("");
-        setNotes("");
-    };
-
-
+    // this event handler/function should save an exercise object to the DB under the KV of "exercise_name":[]
     const handleAddingExerciseToProgramme = (event) => {
         event.preventDefault();
-        
-        ProgrammeService.updateProgramme(
-            {programme_name})
 
-        .then(savedProgramme => setProgrammes([...programmes, savedProgramme]));
-    };
+        const selectedProgrammeName = selectedProgramme; // Get the selected programme name from useState state
+
+        // Fetch existing programmes from the database
+        ProgrammeService.getProgrammes()
+            .then((data) => {
+            // Find the specific programme that matches the selected programme name
+            const selectedProgrammeData = data.find(
+                (programme) => programme.programme_name === selectedProgrammeName
+            );
+            if (selectedProgrammeData.exercise_name.length !== 0){
+                // Update the exercise list for the selected programme
+                const updatedExerciseList = [...selectedProgrammeData.exercise_name, exerciseName];
+
+                // Create a payload to update the programme in the database
+                const payload = {
+                    _id: selectedProgrammeData._id,
+                    exercise_name: updatedExerciseList,
+                };
+    
+                // Use ProgrammeService.updateProgramme to update the programme in the database
+                ProgrammeService.updateProgramme(payload)
+            };
+        })
+
+    }
+
 
 
 
 
     return (
-        <div className="modalBackground"> 
-            <div className="modalContainer"> 
 
-                <div className="modalProgrammeBody">
-                    <OutsideClickHandler onOutsideClick={closeProgrammeModal}>
+        <div className="modalProgrammeBody">
 
-                        {/* this form saves a exercise to an exisiting programme on the db */}
-                        <form onSubmit={handleAddingExerciseToProgramme}>
-                        <h2>Add {exerciseName} <br></br>to an exisiting programme</h2>
+            {/* this form saves a exercise to an exisiting programme on the db */}
+            <form onSubmit={handleAddingExerciseToProgramme}>
+            <h3>Add  <i>{exerciseName}</i> to an exisiting programme</h3>
 
-                        <select value={selectedProgramme} onChange={handleProgrammeSelected}>
-                            <option value="">Select an exisiting programme</option>
-                            {allDropdownProgrammes.map((programme_name) => (
-                                    <option key={programme_name} value={programme_name}>   
-                                    {programme_name}      </option>
-                                ))}
-                        </select>
+            <select value={selectedProgramme} onChange={handleProgrammeSelected}>
+                <option value="">Select an exisiting programme</option>
+                {allDropdownProgrammes.map((programme_name) => (
+                        <option key={programme_name} value={programme_name}>   
+                        {programme_name}      </option>
+                    ))}
+            </select>
 
 
-                        <br></br>
-                        <br></br>
-                        <input type="submit" name="submit" value="Save" />
-                        </form>
+            <br></br>
+            <br></br>
+            <input type="submit" name="submit" value="Save" />
+            </form>
 
-
-
-                         {/* this form submits a new programe to the db */}
-                    <form onSubmit={handleSubmitNewProgramme}>
-                        <h2>Create a new programme:</h2> 
-
-                        <label>Programme Name: </label>
-                        <input type="text" value={programme_name} placeholder="Programme name here" onChange={handleNameChange} style={{width: "290px"}}/>
-                        <br></br>
-
-                        <label> Notes: </label>
-                        <input type="text" value={notes} placeholder="Add notes here"  onChange={handleNotesChange}style={{width: "370px"}}/>
-                        <br></br>
-
-                        <input type="submit" name="submit" value="Save new programme" />
-                        </form>
-
-
-                    <div className="modalFooter">
-                            <button className="modalFooterButton" onClick={closeProgrammeModal}>close</button>
-                    </div>
-                    </OutsideClickHandler>
-                </div>
-            </div>
         </div>
     )
 
@@ -128,4 +88,4 @@ const AddNewProgrammePopup = ({ closeProgrammeModal, exerciseName }) => {
 
 };
 
-export default AddNewProgrammePopup;
+export default AddToProgramme;
