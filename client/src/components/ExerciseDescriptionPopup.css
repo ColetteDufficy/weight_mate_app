@@ -73,3 +73,23 @@ font-size: 1em;
 cursor: grab;
 }
 
+.modalProgrammeBody{
+  /* border: red solid 3px; */
+  color: black;
+  /* font-size: 0.5em; */
+}
+
+.modalProgrammeBody button{
+border: rgb(0, 255, 60) solid 3px;
+font-family: 'Maven Pro', sans-serif;
+/* width: 100px; */
+height: 25px;
+margin: 10px;
+border: none;
+background-color: rgba(9, 155, 116, 0.786);
+color: white;
+border-radius: 5px;
+font-size: 1em;
+cursor: grab;
+}
+

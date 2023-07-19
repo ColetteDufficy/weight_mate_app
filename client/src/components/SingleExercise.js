@@ -1,11 +1,14 @@
 import React, { useState } from "react"
 import ExerciseDescriptionPopup from "./ExerciseDescriptionPopup";
 import AddNewProgrammePopup from "./AddNewProgrammePopup";
+import ProgrammeService from '../services/ProgrammeService'
 
 
 
 const SingleExercise = ({exercise}) => {
     // console.log(exercise);
+
+    const [programmes, setProgrammes] = useState([])
 
         // usestate to control the display of the exercise description popup
         const [displayDescription, setDisplayDescription] = useState(false);
@@ -20,6 +23,11 @@ const SingleExercise = ({exercise}) => {
             setDisplayProgramme(!displayProgramme)
         }
 
+        const createNewProgramme = newProgramme => {
+            ProgrammeService.addNewProgramme(newProgramme)
+            .then(savedProgramme => setProgrammes([...programmes, savedProgramme]))
+        };
+
 
     return (
         <div className="single-exercise">
@@ -32,7 +40,7 @@ const SingleExercise = ({exercise}) => {
             <br></br>
 
             <button className="modalButton" onClick={handleDisplayProgramme}> Add to a programme </button>
-            {displayProgramme && <AddNewProgrammePopup closeProgrammeModal={handleDisplayProgramme}/> }
+            {displayProgramme && <AddNewProgrammePopup addNewProgramme={createNewProgramme} closeProgrammeModal={handleDisplayProgramme}/> }
         </div>
     )
 }

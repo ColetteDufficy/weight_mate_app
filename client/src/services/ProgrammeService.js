@@ -8,6 +8,15 @@ const ProgrammeService = {
         .then(res => res.json());
     },
 
+    addNewProgramme(payload) {
+        return fetch(localhostURL, {
+            method: 'POST',
+            body: JSON.stringify(payload),
+            headers: { 'Content-Type': 'application/json' }
+        })
+        .then(res => res.json());
+    }
+
 
 
 
