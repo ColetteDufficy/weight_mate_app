@@ -10,23 +10,23 @@ const SingleExercise = ({exercise}) => {
 
     const [programmes, setProgrammes] = useState([])
 
-        // usestate to control the display of the exercise description popup
-        const [displayDescription, setDisplayDescription] = useState(false);
-        const [displayProgramme, setDisplayProgramme] = useState(false);
+    // usestate to control the display of the exercise description popup
+    const [displayDescription, setDisplayDescription] = useState(false);
+    const [displayProgramme, setDisplayProgramme] = useState(false);
 
-        // popup always starts hidden. 
-        const handleDisplayDescription = () => {
-            setDisplayDescription(!displayDescription)
-        }
+    // popup always starts hidden. 
+    const handleDisplayDescription = () => {
+        setDisplayDescription(!displayDescription)
+    }
 
-        const handleDisplayProgramme = () => {
-            setDisplayProgramme(!displayProgramme)
-        }
+    const handleDisplayProgramme = () => {
+        setDisplayProgramme(!displayProgramme)
+    }
 
-        const createNewProgramme = newProgramme => {
-            ProgrammeService.addNewProgramme(newProgramme)
-            .then(savedProgramme => setProgrammes([...programmes, savedProgramme]))
-        };
+    // const createNewProgramme = newProgramme => {
+    //     ProgrammeService.addNewProgramme(newProgramme)
+    //     .then(savedProgramme => setProgrammes([...programmes, savedProgramme]))
+    // };
 
 
     return (
@@ -40,7 +40,7 @@ const SingleExercise = ({exercise}) => {
             <br></br>
 
             <button className="modalButton" onClick={handleDisplayProgramme}> Add to a programme </button>
-            {displayProgramme && <AddNewProgrammePopup addNewProgramme={createNewProgramme} closeProgrammeModal={handleDisplayProgramme}/> }
+            {displayProgramme && <AddNewProgrammePopup closeProgrammeModal={handleDisplayProgramme} exerciseName={exercise.name}/> }
         </div>
     )
 }

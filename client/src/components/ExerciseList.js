@@ -12,7 +12,7 @@ const ExerciseList = ({ exerciseListings, setExerciseListings } ) => {
     });
 
 
-    const handleShuffle = (event) => {
+    const handleShuffle = () => {
         ExerciseService.randomInitialFetchExercises()
         .then(intialExerciseListings => setExerciseListings(intialExerciseListings));
     }
