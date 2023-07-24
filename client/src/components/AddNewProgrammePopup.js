@@ -33,8 +33,10 @@ const AddNewProgrammePopup = ({ closeProgrammeModal, exerciseName }) => {
         event.preventDefault();
         
         ProgrammeService.addNewProgramme(
-            {programme_name: programme_name, 
-            notes: notes
+            {
+                programme_name: programme_name, 
+                notes: notes,
+                exerciseName: [] // adding an empty array so that exercises can be saved back
         })
         .then(savedProgramme => setProgrammes([...programmes, savedProgramme]));
 
@@ -52,8 +54,7 @@ const AddNewProgrammePopup = ({ closeProgrammeModal, exerciseName }) => {
                 <div className="modalProgrammeBody">
                     <OutsideClickHandler onOutsideClick={closeProgrammeModal}>
 
-                    <AddToProgramme exerciseName={exerciseName}/>
-
+                    <AddToProgramme exerciseName={exerciseName} />
 
 
                          {/* this form submits a new programe to the db */}

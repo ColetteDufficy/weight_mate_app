@@ -38,23 +38,28 @@ const AddToProgramme = ({ exerciseName }) => {
             const selectedProgrammeData = data.find(
                 (programme) => programme.programme_name === selectedProgrammeName
             );
-            if (selectedProgrammeData.exercise_name.length !== 0){
+            if (selectedProgrammeData.exercise_name !== null){
                 // Update the exercise list for the selected programme
                 const updatedExerciseList = [...selectedProgrammeData.exercise_name, exerciseName];
 
                 // Create a payload to update the programme in the database
                 const payload = {
-                    _id: selectedProgrammeData._id,
+                    // _id: selectedProgrammeData._id,
                     exercise_name: updatedExerciseList,
                 };
     
                 // Use ProgrammeService.updateProgramme to update the programme in the database
-                ProgrammeService.updateProgramme(payload)
+                ProgrammeService.updateProgramme(payload, selectedProgrammeData._id)
+                .catch(error => {
+                    console.error(error);
+                });
             };
         })
 
     }
 
+
+    // 
 
 
 

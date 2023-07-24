@@ -12,7 +12,7 @@ const ProgrammeService = {
     getProgrammesNames() {
         return fetch(localhostURL)
             .then(res => res.json())
-            .then(data => data.map(item => item.programme_name));
+            .then(data => data.map(dataItem => dataItem.programme_name));
     },
 
 
@@ -28,8 +28,8 @@ const ProgrammeService = {
 
 
     // update an exisiting prigramme on the db, eg adding a new exercise
-    updateProgramme(payload) {
-        return fetch(localhostURL + payload._id, {
+    updateProgramme(payload, _id) {
+        return fetch(localhostURL + _id, {
             method: 'PUT',
             body: JSON.stringify(payload),
             headers: {  'Content-Type': 'application/json' }

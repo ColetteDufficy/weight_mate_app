@@ -70,14 +70,18 @@ const createRouter = function (collection) {
 
     // update a programme
     router.put('/:id', (req, res) => {
-        const id = req.params.id;
+        const _id = req.params.id;
+
         const updatedData = req.body;
+        delete updatedData._id;
+
         collection
         .updateOne(
-            { _id: ObjectID(id) },
-            { $set: updatedData },
+            { _id: ObjectID(_id) }, //
+            { $set: updatedData }, //note $set
         )
         .then((result) => {
+
             res.json(result)
         })
         .catch((err) => {
