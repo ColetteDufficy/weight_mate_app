@@ -19,7 +19,6 @@ const AddNewProgrammePopup = ({ closeProgrammeModal, exerciseName }) => {
         setProgramme_Name(nameChange);
     };
 
-
     // event handler for notes update - function 
     const handleNotesChange = (event) => {
         const notesChange = event.target.value;
