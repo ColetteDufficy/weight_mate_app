@@ -29,7 +29,7 @@ const ProgrammeService = {
 
     // update an exisiting prigramme on the db, eg adding a new exercise
     updateProgramme(payload, _id) { //! read more into this - the separarting the _id out of the payload see line 47 AddToProgrmme.js
-        return fetch(localhostURL + _id, {
+        return fetch(localhostURL + _id, { 
             method: 'PUT',
             body: JSON.stringify(payload),
             headers: {  'Content-Type': 'application/json' }

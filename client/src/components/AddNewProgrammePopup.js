@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import './ExerciseDescriptionPopup.css';
 import OutsideClickHandler from 'react-outside-click-handler'; 
 import ProgrammeService from '../services/ProgrammeService'
@@ -6,11 +6,14 @@ import AddToProgramme from "./AddToProgramme";
 
 
 const AddNewProgrammePopup = ({ closeProgrammeModal, exerciseName }) => {
-    const [programme_name, setProgramme_Name] = useState(""); //for hen i want to add a new programme name
+    const [programme_name, setProgramme_Name] = useState(""); //for when i want to add a new programme name
     const [notes, setNotes] = useState(""); //for when i want to add new notes with the new prgramme
     const [programmes, setProgrammes] = useState([]) // used in handleSubmitNewProgramme()
+    const [refresh, setRefresh] = useState(true)
 
+    useEffect(() => {
 
+    }, [programmes])
 
 
     // event handler for name update - function 
@@ -41,6 +44,7 @@ const AddNewProgrammePopup = ({ closeProgrammeModal, exerciseName }) => {
 
         setProgramme_Name("");
         setNotes("");
+        setRefresh(!refresh)
     };
 
 
