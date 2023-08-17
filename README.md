@@ -11,6 +11,7 @@
 
 **Weight Mate** allows a novice gym user to track her weight training progress. She would like to be able to choose from a wide selection of exercises, have a resource to show her how to perform the chosen exercise, and also be able to record her performance so she can anaylize her progress. Ultimately, she'd like to use it on her phone at the gym, and make it part of her training routine. 
 
+See [design brief](https://github.com/ColetteDufficy/weight_mate_app/blob/main/weight_mate_brief.md) for more detail
 
 
 ## Getting Started
