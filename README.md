@@ -1,19 +1,16 @@
+<a name="readme-top"></a>
+
 # Weight Mate
 ![Homepage](screengrabs/homepage_screenshot_2.png)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![MongoDB](hhttps://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-<!-- https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white -->
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![Node](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
 
-A novice gym user wants to track her weight training progress. She would like to be able to choose from a wide selection of exercises, have a resource to show her how to perform the chosen exercise, and also be able to record her performance so she can anaylize her progress. 
-Ultimately, she'd like to use it on her phone at the gym, and make it part of her training routine. 
+**Weight Mate** allows a novice gym user to track her weight training progress. She would like to be able to choose from a wide selection of exercises, have a resource to show her how to perform the chosen exercise, and also be able to record her performance so she can anaylize her progress. Ultimately, she'd like to use it on her phone at the gym, and make it part of her training routine. 
 
-
-### Languages and Frameworks used:
-JavaScript, React, CSS, JSX, Node, MongoBD
 
 
 ## Getting Started
@@ -24,31 +21,24 @@ After completing that step, in the command line:
 
 1. Clone your new repo by typing `git clone git@github.com:ColetteDufficy/weight_mate_app.git`
 
-2. Then you'll need to create an API key:
-    - In your browser, go to `https://api-ninjas.com/api/exercises` create an account and an API Key.
-    - Type `cd client/src`. Create a file called `env.js`
-    - Enter the following code:
+2. You'll need to seed your database:
+    - Type `cd server`
+    - Type `npm run seeds`
+3. Install the dependencies with `npm i`
+
+4. You'll need to create an API key:
+    - In your browser, navigate to `https://api-ninjas.com/api/exercises`. Create an account and an API Key.
+    - In the command line, type `cd client/src`. Then type `touch env.js`
+    - Enter the following code, save and close:
         `export const PORT = 3000`
         `export const DATABASE_URL="mongodb://localhost:27017"`
         `export const API_KEY="enter_your_API_key_here"`
 
-3. Then you'll need to seed your database:
-    a. Type `cd server` to go into the project's server folder.
+5. You'll need to start your front end:
+    - Type `cd client`
+    - Install the dependencies with `npm i`
 
-3. Install the dependencies with `npm install`
-4. Run the project with `npm start`
-5. Quiz time!
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-### Available Scripts
-
-In the client directory, you can run:
-
-### `npm i` 
-Installs all dev dependancies.
-
-### `npm start`
+6. Run the project with `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -58,80 +48,20 @@ You may also see any lint errors in the console.
 
 
 
-<!-- 
-<a name="readme-top"></a>
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Quiznet
-### Wireframes
-### Wireframe of main page
-
-![Banner](https://github.com/sf-adams/quiznet/assets/35069870/60fbf66e-f37b-4c9b-8d0b-b272c2a3f392)
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
-![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
-
-<!-- BACKGROUND -->
-
-**Quiznet** is an application that aims to help programmers grow and maintain the wide range of information they need in a fun and as easy way. It can either be used with the premade questions, or JSON files of your own.
-
-<!-- Hopefully there is a question or two in there that you didn't already know. If there's something that you'd recommend being added, please go to the [contribution](#contributing) section. -->
-
-<!-- SCREENSHOT -->
-
-<!-- ![](./screenshot.jpg) -->
-
-<!-- FEATURES -->
-
-## Roadmap
-
-- [ ] Start page
-- [x] Questions for JavaScript and React.js
-- [ ] Topic Selector
-- [ ] Timer
-- [ ] Results page with graphs
-- [ ] Choose how many questions/topic
-- [ ] Share results
-- [ ] Fully tested
-- [ ] Mobile responsive
-
-See the [open issues](https://github.com/sf-adams/quiznet/issues) for a full list of proposed features (and known issues).
-
-<!-- To view the demo: click here -->
-
-<!-- GETTING STARTED -->
-
-## Getting Started
-
-The first step is to fork a copy of the Quiznet repository to your own account. Follow the [official instructions](https://docs.github.com/en/get-started/quickstart/fork-a-repo) from GitHub.
-
-After completing that step, in the command line:
-
-1. Clone your new repo by typing `git clone https://github.com/YOUR-USERNAME/quiznet.git`
-2. Then type `cd quiznet` to go into the project's directory
-3. Install the dependencies with `npm install`
-4. Run the project with `npm start`
-5. Quiz time!
-
-<!-- AUTHOR/CONTACT -->
 
 ## Author
 
-[![Website][website-shield]][website-url]
+[![Website][website-shield]][linkedin-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-[![Medium][medium-shield]][medium-url]
-[![Codepen][codepen-shield]][codepen-url]
 [![GitHub][github-shield]][github-url]
 
-[website-shield]: https://img.shields.io/badge/Sam%20Adams-FFD300?style=for-the-badge&logo=aboutdotme&logoColor=242424
-[website-url]: https://sf-adams.com
+[website-shield]: https://img.shields.io/badge/Colette%20Dufficy-FFD300?style=for-the-badge&logo=aboutdotme&logoColor=242424
 [linkedin-shield]: https://img.shields.io/badge/LinkedIn-FFD300?style=for-the-badge&logo=linkedin&logoColor=242424
-[linkedin-url]: https://linkedin.com/in/sf-adams
-[medium-shield]: https://img.shields.io/badge/Medium-FFD300?style=for-the-badge&logo=medium&logoColor=242424
-[medium-url]: https://medium.com/@sf-adams
-[codepen-shield]: https://img.shields.io/badge/CodePen-FFD300?style=for-the-badge&logo=codepen&logoColor=242424
-[codepen-url]: https://codepen.io/sf-adams
+[linkedin-url]: https://linkedin.com/in/colettedufficy/
 [github-shield]: https://img.shields.io/badge/GitHub-FFD300?style=for-the-badge&logo=github&logoColor=242424
-[github-url]: https://github.io/sf-adams
+[github-url]: https://github.com/ColetteDufficy
 
 <!-- LICENSE -->
 
@@ -139,15 +69,6 @@ After completing that step, in the command line:
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-<!-- ACKNOWLEDGMENTS -->
 
-## Acknowledgements
+<p align="right">(<a href="#readme-top">Back to Top</a>)</p> 
 
-This project was inspired by [PassMedicine](https://www.passmedicine.com/) a resource that is used by thousands of medical students from across the United Kingdom. If it could work for them, then hopefully something similar would work for developers.
-
-Other inspiration and references include:
-
-- [FreeCodeCamp Developer Quiz](https://developerquiz.org/)
-- [Dribbble Quiz Design](https://dribbble.com/shots/17815087-Audible-Utility-Quiz)
-
-<p align="right">(<a href="#readme-top">Back to Top</a>)</p> -->
