@@ -1,6 +1,9 @@
 # Weight Mate
-![Homepage](screengrabs/homepage_screenshot.png)
+![Homepage](screengrabs/homepage_screenshot_2.png)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
 
 A novice gym user wants to track her weight training progress. She would like to be able to choose from a wide selection of exercises, have a resource to show her how to perform the chosen exercise, and also be able to record her performance so she can anaylize her progress. 
@@ -11,6 +14,29 @@ Ultimately, she'd like to use it on her phone at the gym, and make it part of he
 JavaScript, React, CSS, JSX, Node, MongoBD
 
 ### Getting Started
+
+## Getting Started
+
+The first step is to fork a copy of the Weight Mate repository to your own account. Follow the [official instructions](https://docs.github.com/en/get-started/quickstart/fork-a-repo) from GitHub.
+
+After completing that step, in the command line:
+
+1. Clone your new repo by typing `git clone git@github.com:ColetteDufficy/weight_mate_app.git`
+
+2. Then you'll need to create an API key:
+    a. In your browser, go to `https://api-ninjas.com/api/exercises` create an account and an API Key.
+    b. Navigate to the client folder, and into the `src` folder. Create a file called env.js
+    c. Enter the following code:
+        `export const PORT = 3000`
+        `export const DATABASE_URL="mongodb://localhost:27017"`
+        `export const API_KEY="enter_your_API_key_here"`
+
+3. Then you'll need to seed your database:
+    a. Type `cd server` to go into the project's server folder.
+
+3. Install the dependencies with `npm install`
+4. Run the project with `npm start`
+5. Quiz time!
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
