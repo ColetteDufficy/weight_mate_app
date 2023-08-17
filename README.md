@@ -2,6 +2,8 @@
 ![Homepage](screengrabs/homepage_screenshot_2.png)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![MongoDB](hhttps://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+<!-- https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white -->
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
@@ -24,7 +26,7 @@ After completing that step, in the command line:
 
 2. Then you'll need to create an API key:
     - In your browser, go to `https://api-ninjas.com/api/exercises` create an account and an API Key.
-    - Navigate to the client folder, and into the `src` folder. Create a file called env.js
+    - Type `cd client/src`. Create a file called `env.js`
     - Enter the following code:
         `export const PORT = 3000`
         `export const DATABASE_URL="mongodb://localhost:27017"`
