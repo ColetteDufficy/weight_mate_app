@@ -13,7 +13,6 @@ Ultimately, she'd like to use it on her phone at the gym, and make it part of he
 ### Languages and Frameworks used:
 JavaScript, React, CSS, JSX, Node, MongoBD
 
-### Getting Started
 
 ## Getting Started
 
@@ -24,9 +23,9 @@ After completing that step, in the command line:
 1. Clone your new repo by typing `git clone git@github.com:ColetteDufficy/weight_mate_app.git`
 
 2. Then you'll need to create an API key:
-    a. In your browser, go to `https://api-ninjas.com/api/exercises` create an account and an API Key.
-    b. Navigate to the client folder, and into the `src` folder. Create a file called env.js
-    c. Enter the following code:
+    - In your browser, go to `https://api-ninjas.com/api/exercises` create an account and an API Key.
+    - Navigate to the client folder, and into the `src` folder. Create a file called env.js
+    - Enter the following code:
         `export const PORT = 3000`
         `export const DATABASE_URL="mongodb://localhost:27017"`
         `export const API_KEY="enter_your_API_key_here"`
