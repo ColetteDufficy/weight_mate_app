@@ -8,41 +8,82 @@
 ![Node](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-
+## Brief
 **Weight Mate** allows a novice gym user to track her weight training progress. She would like to be able to choose from a wide selection of exercises, have a resource to show her how to perform the chosen exercise, and also be able to record her performance so she can anaylize her progress. Ultimately, she'd like to use it on her phone at the gym, and make it part of her training routine. 
 
 See [design brief](https://github.com/ColetteDufficy/weight_mate_app/blob/main/weight_mate_brief.md) for more detail
 
 
 ## Getting Started
+If you would like to demo the (prototype!) application as it exists at the moment, you'll need a few things...
+- A contemporary web browser, such as Firefox or something WebKit/Blink based (Chromium, Chrome, Brave etc.)
+- [Node.js](https://nodejs.org/)
+- [MongoDB](https://www.mongodb.com/)
 
-The first step is to fork a copy of the Weight Mate repository to your own account. Follow the [official instructions](https://docs.github.com/en/get-started/quickstart/fork-a-repo) from GitHub.
+You'll need to fork a copy of the Weight Mate repository to your own account. Follow the [official instructions](https://docs.github.com/en/get-started/quickstart/fork-a-repo) from GitHub.
 
 After completing that step, in the command line:
 
 1. Clone your new repo by typing `git clone git@github.com:ColetteDufficy/weight_mate_app.git`
 
-2. You'll need to seed your database:
-    - Type `cd server`
-    - Type `npm run seeds`
-3. Install the dependencies with `npm i`
-
-4. You'll need to create an API key:
+2. You'll need to create an API key:
     - In your browser, navigate to `https://api-ninjas.com/api/exercises`. Create an account and an API Key.
-    - In the command line, type `cd client/src`. Then type `touch env.js`
-    - Enter the following code, save and close:
-        `export const PORT = 3000`
-        `export const DATABASE_URL="mongodb://localhost:27017"`
-        `export const API_KEY="enter_your_API_key_here"`
+    - In the command line
+```
+# terminal
+cd client/src
+touch env.js
+```
 
-5. You'll need to start your front end:
-    - Type `cd client`
-    - Install the dependencies with `npm i`
+3. Enter the following code, save and close:
+    
+```
+# env.js
+export const PORT = 3000
+export const DATABASE_URL="mongodb://localhost:27017"
+export const API_KEY="enter_your_API_key_here"
+```
 
-6. Run the project with `npm start`
+4. Install all of the dependencies listed in `server/package.json`:
+```
+# Terminal
+cd server
+npm i
+```
+
+
+5. You'll need to create and seed your database:
+```
+# Terminal
+cd server
+npm run seeds
+```
+
+6. Install all of the dependencies listed in `client/package.json`:
+```
+# Terminal
+cd client
+npm i
+```
+  
+7. Start the server:
+```
+# Terminal
+cd server
+npm start
+```
+
+
+8. Load the front-end:
+```
+# Terminal
+cd client
+npm start
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+(Press CTRL+C to quit)
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
